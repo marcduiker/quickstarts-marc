@@ -17,7 +17,7 @@ on:
   push:
     branches:
       - master
-      - feature/new_quickstarts
+      - feature/556-tutorials-fix
       - release-*
     tags:
       - v*
