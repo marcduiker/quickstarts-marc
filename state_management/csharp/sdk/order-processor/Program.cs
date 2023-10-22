@@ -26,8 +26,8 @@ for (int i = 1; i <= 100; i++) {
     Console.WriteLine("Getting Order: " + result);
     
     // Delete state from the state store
-    await client.DeleteStateAsync(DAPR_STORE_NAME, orderId.ToString());
-    Console.WriteLine("Deleting Order: " + order);
+    // await client.DeleteStateAsync(DAPR_STORE_NAME, orderId.ToString());
+    // Console.WriteLine("Deleting Order: " + order);
     
     await Task.Delay(TimeSpan.FromSeconds(3));
 }
