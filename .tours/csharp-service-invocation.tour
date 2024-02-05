@@ -1,0 +1,39 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "1. Service Invocation (C#)",
+  "steps": [
+    {
+      "directory": "service_invocation/csharp/http",
+      "description": "## Service Invocation"
+    },
+    {
+      "file": "service_invocation/csharp/http/checkout/checkout.csproj",
+      "description": "## Checkout csproj",
+      "line": 1
+    },
+    {
+      "file": "service_invocation/csharp/http/checkout/Program.cs",
+      "description": "## Checkout Program.cs",
+      "line": 1
+    },
+    {
+      "file": "service_invocation/csharp/http/order-processor/order-processor.csproj",
+      "description": "## Order-processor csproj",
+      "line": 1
+    },
+    {
+      "file": "service_invocation/csharp/http/order-processor/Program.cs",
+      "description": "## Order-processor Program.cs",
+      "line": 1
+    },
+    {
+      "file": "service_invocation/csharp/http/dapr.yaml",
+      "description": "## Service Invocation dapr.yaml",
+      "line": 1
+    },
+    {
+      "directory": "service_invocation/csharp/http",
+      "description": "## Run the service invocation demo\r\n\r\nNavigate to the `/service_invocation/csharp/http` path:\r\n\r\n>> cd ./service_invocation/csharp/http\r\n\r\nRun the application using the Dapr CLI:\r\n\r\n>> dapr run -f .\r\n\r\nReturn to the root of the repository:\r\n\r\n>> cd ../../.."
+    }
+  ]
+}
