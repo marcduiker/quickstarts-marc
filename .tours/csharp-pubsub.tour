@@ -38,7 +38,7 @@
     },
     {
       "directory": "pub_sub/csharp/sdk",
-      "description": "## Run the pub/sub demo\r\n\r\nNavigate to the `/pub_sub/csharp/sdk` path:\r\n\r\n>> cd ./pub_sub/csharp/sdk\r\n\r\nRun the application using the Dapr CLI:\r\n\r\n>> dapr run -f .\r\n\r\nReturn to the root of the repository:\r\n\r\n>> cd ../../.."
+      "description": "## Run the pub/sub demo\r\n\r\nNavigate to the `/pub_sub/csharp/sdk` path:\r\n\r\n>> cd ./pub_sub/csharp/sdk\r\n\r\nRun the application using the Dapr CLI:\r\n\r\n>> dapr run -f .\r\n\r\n- Check the log output in the terminal.\r\n\r\n- Check the traces in [Zipkin](http://localhost:9411/zipkin/).\r\n\r\nReturn to the root of the repository:\r\n\r\n>> cd ../../.."
     }
   ]
 }
