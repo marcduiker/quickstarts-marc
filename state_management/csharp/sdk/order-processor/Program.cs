@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
-using Dapr.Client;
-using Microsoft.AspNetCore.Mvc;
-using System.Threading;
-using System.Text.Json;
 using System.Text;
+using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading.Tasks;
+using System.Threading;
+using Microsoft.AspNetCore.Mvc;
+using Dapr.Client;
 
 string DAPR_STORE_NAME = "statestore";
 var client = new DaprClientBuilder().Build();
@@ -25,10 +25,10 @@ for (int i = 1; i <= 100; i++) {
     Console.WriteLine("Getting Order: " + result);
     
     // Delete state from the state store
-    await client.DeleteStateAsync(DAPR_STORE_NAME, orderId.ToString());
-    Console.WriteLine("Deleting Order: " + order);
+    // await client.DeleteStateAsync(DAPR_STORE_NAME, orderId.ToString());
+    // Console.WriteLine("Deleting Order: " + order);
     
-    await Task.Delay(TimeSpan.FromSeconds(5));
+    await Task.Delay(TimeSpan.FromSeconds(3));
 }
 
 public record Order([property: JsonPropertyName("orderId")] int orderId);

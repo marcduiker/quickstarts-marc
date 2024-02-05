@@ -1,0 +1,63 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "3. State Management (C#)",
+  "steps": [
+    {
+      "directory": "state_management/csharp/sdk",
+      "description": "## State Management"
+    },
+    {
+      "file": "state_management/csharp/sdk/order-processor/Program.csproj",
+      "description": "## Order-processor csproj",
+      "line": 1
+    },
+    {
+      "file": "state_management/csharp/sdk/order-processor/Program.cs",
+      "description": "## Order-processor Program.cs",
+      "line": 1
+    },
+    {
+      "file": "state_management/csharp/sdk/dapr.yaml",
+      "description": "## State Management dapr.yaml",
+      "line": 1
+    },
+    {
+      "file": "state_management/resources/statestore_redis.yaml",
+      "description": "## Redis Component",
+      "line": 1
+    },
+    {
+      "directory": "state_management/csharp/sdk",
+      "description": "## Run the State Management demo (Redis)\r\n\r\nNavigate to the `/state_management/csharp/sdk` path:\r\n\r\n>> cd ./state_management/csharp/sdk\r\n\r\nRun the application using the Dapr CLI:\r\n\r\n>> dapr run -f .\r\n\r\n### Show the records in Redis\r\n\r\n>> [Show records](command:workbench.view.extension.github-cweijan-nosql)\r\n\r\n### Simulate a problem with Redis\r\n\r\nList all containers:\r\n\r\n>> docker ps --format '{{.Names}}'\r\n\r\nStop the Redis container:\r\n\r\n>> docker stop dapr_redis\r\n\r\nStart the Redis container:\r\n\r\n>> docker start dapr_redis\r\n\r\nReturn to the root of the repository:\r\n\r\n>> cd ../../..",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 31,
+          "character": 15
+        }
+      }
+    },
+    {
+      "file": "state_management/resources/statestore_cosmos.yaml.temp",
+      "description": "## CosmosDB component",
+      "line": 1
+    },
+    {
+      "file": "state_management/resources/secrets.yaml",
+      "description": "## SecretStore component",
+      "line": 1
+    },
+    {
+      "file": "state_management/csharp/sdk/order-processor/secrets.json",
+      "description": "## Secrets.json",
+      "line": 1
+    },
+    {
+      "directory": "state_management/csharp/sdk",
+      "description": "## Run the State Management demo (CosmosDB)\r\n\r\nNavigate to the `/state_management/csharp/sdk` path:\r\n\r\n>> cd ./state_management/csharp/sdk\r\n\r\nEnsure `statestore_cosmos.yaml.temp` is renamed to `statestore_cosmos.yaml` and `statestore_redis.yaml` is renamed to `statestore_redis.yaml.temp`.\r\n\r\nRun the application using the Dapr CLI:\r\n\r\n>> dapr run -f .\r\n\r\n### Show the records in CosmosDB\r\n\r\n>> [Show records](command:workbench.view.extension.azure)\r\n\r\nStart the Redis container:\r\n\r\n>> docker start dapr_redis\r\n\r\nReturn to the root of the repository:\r\n\r\n>> cd ../../.."
+    }
+  ]
+}

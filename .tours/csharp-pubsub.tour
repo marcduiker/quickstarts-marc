@@ -1,0 +1,44 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "2. Pub/Sub (C#)",
+  "steps": [
+    {
+      "directory": "pub_sub/csharp/sdk",
+      "description": "## Pub/Sub"
+    },
+    {
+      "file": "pub_sub/csharp/sdk/checkout/checkout.csproj",
+      "description": "## Checkout csproj",
+      "line": 1
+    },
+    {
+      "file": "pub_sub/csharp/sdk/checkout/Program.cs",
+      "description": "## Checkout Program.cs",
+      "line": 1
+    },
+    {
+      "file": "pub_sub/csharp/sdk/order-processor/order-processor.csproj",
+      "description": "## Order-processor csproj",
+      "line": 1
+    },
+    {
+      "file": "pub_sub/csharp/sdk/order-processor/Program.cs",
+      "description": "## Order-processor Program.cs",
+      "line": 1
+    },
+    {
+      "file": "pub_sub/csharp/sdk/dapr.yaml",
+      "description": "## Pub/sub dapr.yaml",
+      "line": 1
+    },
+    {
+      "file": "pub_sub/resources/pubsub.yaml",
+      "description": "## pubsub.yaml",
+      "line": 1
+    },
+    {
+      "directory": "pub_sub/csharp/sdk",
+      "description": "## Run the pub/sub demo\r\n\r\nNavigate to the `/pub_sub/csharp/sdk` path:\r\n\r\n>> cd ./pub_sub/csharp/sdk\r\n\r\nRun the application using the Dapr CLI:\r\n\r\n>> dapr run -f .\r\n\r\nReturn to the root of the repository:\r\n\r\n>> cd ../../.."
+    }
+  ]
+}
