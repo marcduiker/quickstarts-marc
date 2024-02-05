@@ -22,7 +22,9 @@
 		"vscode": {
 			"extensions": [
 				"cweijan.vscode-redis-client",
-				"humao.rest-client"
+				"ms-vscode.vscode-node-azure-pack",
+				"humao.rest-client",
+				"vsls-contrib.codetour"
 			]
 		}
 	}
