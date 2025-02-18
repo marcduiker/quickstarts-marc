@@ -9,6 +9,7 @@ bin
 obj
 github.com
 **/*.log
+secrets.json
 
 ## Build generated
 target/

@@ -6,6 +6,10 @@ apps:
     appDirPath: ./order-processor/
     appPort: 7006
     command: ["dotnet", "run"]
+    appLogDestination: console
+    daprdLogDestination: console
   - appID: checkout-sdk
     appDirPath: ./checkout/
     command: ["dotnet", "run"]
+    appLogDestination: console
+    daprdLogDestination: console
