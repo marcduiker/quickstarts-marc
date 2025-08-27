@@ -14,41 +14,52 @@ limitations under the License.
 */
 
 using Dapr.AI.Conversation;
+using Dapr.AI.Conversation.ConversationRoles;
 using Dapr.AI.Conversation.Extensions;
+#pragma warning disable DAPR_CONVERSATION
 
-class Program
+const string ConversationComponentName = "echo";
+const string Prompt = "What is dapr?";
+
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDaprConversationClient();
+var app = builder.Build();
+
+//Instantiate Dapr Conversation Client
+var conversationClient = app.Services.GetRequiredService<DaprConversationClient>();
+
+var conversationOptions = new ConversationOptions(ConversationComponentName);
+var inputs = new ConversationInput(new List<IConversationMessage>
+    {
+        new UserMessage {
+            Name = "TestUser",
+            Content = [new MessageContent(Prompt)] }
+    });
+
+// Send a request to the echo mock LLM component
+var response = await conversationClient.ConverseAsync([inputs], conversationOptions);
+Console.WriteLine("Input sent: " + Prompt);
+
+if (response != null)
 {
-  private const string ConversationComponentName = "echo";
-
-  static async Task Main(string[] args)
+  Console.Write("Output response:");
+  foreach (var output in response.Outputs)
   {
-    const string prompt = "What is dapr?";
-
-    var builder = WebApplication.CreateBuilder(args);
-    builder.Services.AddDaprConversationClient();
-    var app = builder.Build();
-
-    //Instantiate Dapr Conversation Client
-    var conversationClient = app.Services.GetRequiredService<DaprConversationClient>();
-
-    try
+    foreach (var choice in output.Choices)
     {
-      // Send a request to the echo mock LLM component
-      var response = await conversationClient.ConverseAsync(ConversationComponentName, [new(prompt, DaprConversationRole.Generic)]);
-      Console.WriteLine("Input sent: " + prompt);
-
-      if (response != null)
+      Console.WriteLine($" {choice.Message}");
+      foreach (var toolCall in choice.Message.ToolCalls)
       {
-        Console.Write("Output response:");
-        foreach (var resp in response.Outputs)
-        {
-          Console.WriteLine($" {resp.Result}");
-        }
+         if (toolCall is CalledToolFunction calledToolFunction)
+            {
+                Console.WriteLine($"\t\tId: {calledToolFunction.Id}, Name: {calledToolFunction.Name}, Arguments: {calledToolFunction.JsonArguments}");
+            }
+            else
+            {
+                Console.WriteLine($"\t\tId: {toolCall.Id}");
+            }
       }
-    }
-    catch (Exception ex)
-    {
-      Console.WriteLine("Error: " + ex.Message);
     }
   }
 }
+#pragma warning restore DAPR_CONVERSATION
